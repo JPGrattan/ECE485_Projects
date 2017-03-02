@@ -10,13 +10,12 @@ int main(int argc, char*argv[])
 	for (int i = 0; i < argc; i++) {
 		std::cout << "Passed argument(" << i << "): " << argv[i] << std::endl;
 	}
-	fileIO* file = new fileIO();
-	std::string filename = argv[1];
-	file->open(filename);
-	std::string firstLine = file->sGetLine(filename);
-	std::string secondLine = file->sGetLine(filename);
-	std::cout << "Line 1: " << firstLine << std::endl;
-	std::cout << "Line 2: " << secondLine << std::endl;
-	file->close();
+	fileIO file1 = new fileIO(argv, 1);
+	//file1->open();
+	//std::string firstLine = file1->sGetLine();
+	//std::string secondLine = file1->sGetLine();
+	//std::cout << "Line 1: " << firstLine << std::endl;
+	//std::cout << "Line 2: " << secondLine << std::endl;
+	//file1->close();
 	return 0;
 }

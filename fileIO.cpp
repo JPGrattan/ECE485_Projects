@@ -4,9 +4,10 @@
 #include <fstream>
 #include <string>
 
-fileIO::fileIO()
+fileIO::fileIO(char*argv[],int n)
 {
 	//open output file
+	char*m_file = *argv[n];
 	//assign *m_fileO
 	//assign *m_fileI
 }
@@ -18,21 +19,21 @@ fileIO::~fileIO()
 	//delete *m_fileI;
 }
 
-std::string fileIO::sGetLine(std::string filename)
+std::string fileIO::sGetLine()
 {
 	std::string str;
-	std::getline(filename, str)
+	std::getline(*m_file, str)
 	return str;
 }
 
-std::string fileIO::sSetLine(*outputLine)
+std::string fileIO::sSetLine()
 {
 	//writes single line to file
 }
 
-bool fileIO::open(std::string filename)
+bool fileIO::open()
 {
-	std::ifstream file(filename);
+	std::ifstream *file(filename);
 	if (!in) {
 		std::cout << "Cannot open input file.\n";
 		return 1;
@@ -44,5 +45,5 @@ bool fileIO::open(std::string filename)
 
 void fileIO::close()
 {
-	file.close();
+	*file.close();
 }
