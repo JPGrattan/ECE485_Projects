@@ -1,21 +1,19 @@
 #include "fileIO.h"
-#include <iomanip>
-#include <iostream>
-#include <fstream>
-#include <string>
 
-int main(int argc, char*argv[])
+int main(int argc, char* argv[])
 {
+	std::cout << "I like turtles!" << std::endl;
 	std::cout << "Argument count: " << argc << std::endl;
 	for (int i = 0; i < argc; i++) {
 		std::cout << "Passed argument(" << i << "): " << argv[i] << std::endl;
 	}
-	fileIO file1 = new fileIO(argv, 1);
-	//file1->open();
-	//std::string firstLine = file1->sGetLine();
-	//std::string secondLine = file1->sGetLine();
+
+	fileIO* oFile = new fileIO(argv[1]);
+	std::cout << "Returned from constructor" << std::endl;
+	//std::string firstLine = oFile->sGetLine();
+	//std::string secondLine = oFile->sGetLine();
 	//std::cout << "Line 1: " << firstLine << std::endl;
 	//std::cout << "Line 2: " << secondLine << std::endl;
-	//file1->close();
+	delete ofile;
 	return 0;
 }

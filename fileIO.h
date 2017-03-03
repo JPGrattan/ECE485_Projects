@@ -5,11 +5,12 @@
 
 class fileIO {
 public:
+	fileIO(char*);
+	~fileIO();
 	std::string sGetLine(); //gets next line from input file
-	std::string sSetLine(); //sets information to output file
-	fileIO(char*argv, int n);
-	void open();
-	void close();
-	FILE *m_file;
+	void sSetLine(std::string); //sets information to output file
+private:
+	std::ifstream *m_fileI;
+	std::ofstream *m_fileO;
 };
 
