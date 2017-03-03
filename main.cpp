@@ -2,7 +2,6 @@
 
 int main(int argc, char* argv[])
 {
-	std::cout << "I like turtles!" << std::endl;
 	std::cout << "Argument count: " << argc << std::endl;
 	for (int i = 0; i < argc; i++) {
 		std::cout << "Passed argument(" << i << "): " << argv[i] << std::endl;
@@ -14,6 +13,6 @@ int main(int argc, char* argv[])
 	//std::string secondLine = oFile->sGetLine();
 	//std::cout << "Line 1: " << firstLine << std::endl;
 	//std::cout << "Line 2: " << secondLine << std::endl;
-	delete ofile;
+	delete oFile;
 	return 0;
 }
